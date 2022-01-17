@@ -1,0 +1,9 @@
+@import "~base/search";
+
+.desktop {
+    display: block;
+    &.selected {
+        text-decoration: underline;
+        font-weight: bold;
+    }
+}
