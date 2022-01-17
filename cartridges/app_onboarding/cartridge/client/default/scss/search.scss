@@ -1,5 +1,8 @@
 @import "~base/search";
 
+.refinements li.color-attribute.desktop {
+    display: block;
+}
 .desktop {
     display: block;
     &.selected {

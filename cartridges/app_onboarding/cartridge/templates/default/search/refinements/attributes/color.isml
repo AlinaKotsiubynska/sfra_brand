@@ -1,4 +1,4 @@
-<li class="color-attribute ${!refinementValue.selectable ? 'disabled' : ''}">
+<li class="color-attribute ${!refinementValue.selectable ? 'disabled' : ''} ${!pdict.userAgent.isMobileDevice ? 'desktop' : ''}">
     <button data-href="${refinementValue.url}">
         <isif condition="${pdict.userAgent.isMobileDevice}">
             <span class="${refinementValue.swatchId} swatch-circle color-value swatch-mark
@@ -11,7 +11,7 @@
                 ${refinementValue.title}
             </span>
         <iselse>
-            <span class="desktop 
+            <span class="desktop
             <isif condition="${refinementValue.selected && refinementValue.selectable}">selected</isif>"
             >${refinementValue.displayValue + " (" + refinementValue.hitCount +")"}</span>
         </isif>
