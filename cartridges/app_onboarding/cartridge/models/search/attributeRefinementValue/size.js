@@ -16,6 +16,4 @@ function SizeRefinementValueWrapper(productSearch, refinementDefinition, refinem
     this.hitCount = refinementValue.hitCount;
 }
 
-SizeRefinementValueWrapper.prototype = Object.create(base.prototype);
-
 module.exports = SizeRefinementValueWrapper;

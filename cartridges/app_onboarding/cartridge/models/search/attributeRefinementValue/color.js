@@ -17,6 +17,4 @@ function ColorRefinementValueWrapper(productSearch, refinementDefinition, refine
     this.hitCount = refinementValue.hitCount;
 }
 
-ColorRefinementValueWrapper.prototype = Object.create(base.prototype);
-
 module.exports = ColorRefinementValueWrapper;
