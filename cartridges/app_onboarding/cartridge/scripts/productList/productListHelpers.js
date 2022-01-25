@@ -1,9 +1,9 @@
 'use strict';
 var base = module.superModule;
+var Site = require('dw/system/Site');
+var timeToLive = Site.current.getCustomPreferenceValue('wishlistItemTimeToLive');
 
 function calculateTimeToExpiration(lastModified) {
-    var Site = require('dw/system/Site');
-    var timeToLive = Site.current.getCustomPreferenceValue('wishlistItemTimeToLive');
     var currentDate = Date.now();
     var timeLeft = timeToLive + (lastModified - currentDate)/24/60/60/1000;
     return Math.ceil(timeLeft)
