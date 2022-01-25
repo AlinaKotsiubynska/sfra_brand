@@ -9,32 +9,23 @@ function calculateTimeToExpiration(lastModified) {
     return Math.ceil(timeLeft)
   }
 
-function removeExpiredItems(req, items) {
-    items.forEach(item => {
-        if (item.pid && calculateTimeToExpiration(item.lastModified) < 1) {
-            base.removeItem(req.currentCustomer.raw, item.pid, { req: req, type: 10, optionId: null, optionValue: null });
-        }
-   });
-}
-
-function checkForExpiredItems(req, itemsCollection) {
+function removeExpiredItems(list) {
+    var Transaction = require('dw/system/Transaction');
     var collections = require('*/cartridge/scripts/util/collections');
 
-    var listOfItems = collections.map(itemsCollection, function (item) {
-        return {
-            pid: item.productID,
-            lastModified: item.lastModified
+    collections.forEach(list.items, function (item) {
+        if (calculateTimeToExpiration(item.lastModified) < 1) {
+            Transaction.wrap(function () {
+                list.removeItem(item);
+            });
         }
-    });
-
-    removeExpiredItems(req, listOfItems)
+    })
 }
 
 
 module.exports = {
     calculateTimeToExpiration: calculateTimeToExpiration,
     removeExpiredItems: removeExpiredItems,
-    checkForExpiredItems: checkForExpiredItems
 };
 
 Object.keys(base).forEach(function (prop) {

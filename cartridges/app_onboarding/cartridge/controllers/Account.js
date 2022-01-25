@@ -8,12 +8,7 @@ server.prepend('Show', function (req, res, next) {
     var list = productListHelper.getList(req.currentCustomer.raw, { type: 10 });
     var viewData = res.getViewData();
 
-    productListHelper.checkForExpiredItems(req, list.items)
-
-    var updatedList = productListHelper.getList(req.currentCustomer.raw, { type: 10 });
-    viewData.list = list;
-    res.setViewData(viewData);
-
+    productListHelper.removeExpiredItems(list)
     next();
 });
 

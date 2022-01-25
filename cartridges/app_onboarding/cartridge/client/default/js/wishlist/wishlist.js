@@ -1,6 +1,6 @@
 'use strict';
 
-var base = require('base/product/base');
+var base = require('base/wishlist/wishlist');
 
 /**
  * @param {Object} response - Response received as a result of successful removal of the item
@@ -74,7 +74,7 @@ function updateListCount (response) {
     $.spinner().stop();
 }
 
-base.removeFromWishlist = function () {
+function removeFromWishlist () {
         $('body').on('click', '.remove-from-wishlist', function (e) {
             e.preventDefault();
             var url = $(this).data('url');
@@ -123,5 +123,7 @@ base.removeFromWishlist = function () {
             }
         });
     }
+
+base.renderNewPageOfItems = renderNewPageOfItems;
 
 module.exports = base;
