@@ -1,7 +1,6 @@
 'use strict';
 
 var base = module.superModule;
-
 var productListHelper = require('*/cartridge/scripts/productList/productListHelpers');
 
 /** Address class that represents an productListItem
@@ -12,6 +11,5 @@ function productListItem(productListItemObject) {
     base.call(this, productListItemObject);
     this.productListItem.timeToExpiration = productListHelper.calculateTimeToExpiration(this.productListItem.lastModified);
 }
-
 
 module.exports = productListItem;

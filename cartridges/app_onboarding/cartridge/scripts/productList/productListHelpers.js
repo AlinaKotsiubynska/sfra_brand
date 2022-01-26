@@ -1,7 +1,9 @@
 'use strict';
+
 var base = module.superModule;
 var Site = require('dw/system/Site');
 var timeToLive = Site.current.getCustomPreferenceValue('wishlistItemTimeToLive');
+var collections = require('*/cartridge/scripts/util/collections');
 
 function calculateTimeToExpiration(lastModified) {
     var currentDate = Date.now();
@@ -11,7 +13,6 @@ function calculateTimeToExpiration(lastModified) {
 
 function removeExpiredItems(list) {
     var Transaction = require('dw/system/Transaction');
-    var collections = require('*/cartridge/scripts/util/collections');
 
     collections.forEach(list.items, function (item) {
         if (calculateTimeToExpiration(item.lastModified) < 1) {
@@ -33,4 +34,3 @@ Object.keys(base).forEach(function (prop) {
         module.exports[prop] = base[prop];
     }
 });
-

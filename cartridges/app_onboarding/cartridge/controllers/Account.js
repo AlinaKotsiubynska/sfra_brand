@@ -6,8 +6,6 @@ server.extend(module.superModule);
 
 server.prepend('Show', function (req, res, next) {
     var list = productListHelper.getList(req.currentCustomer.raw, { type: 10 });
-    var viewData = res.getViewData();
-
     productListHelper.removeExpiredItems(list)
     next();
 });

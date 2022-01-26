@@ -1,20 +1,13 @@
 'use strict';
 
 var server = require('server');
+var productListHelper = require('*/cartridge/scripts/productList/productListHelpers');
+var Resource = require('dw/web/Resource');
 
 server.extend(module.superModule);
-var consentTracking = require('*/cartridge/scripts/middleware/consentTracking');
-var productListHelper = require('*/cartridge/scripts/productList/productListHelpers');
-var csrfProtection = require('*/cartridge/scripts/middleware/csrf');
-var Resource = require('dw/web/Resource');
-var PAGE_SIZE_ITEMS = 15;
 
-server.prepend('Show', consentTracking.consent, server.middleware.https, csrfProtection.generateToken, function (req, res, next) {
-    var WishlistModel = require('*/cartridge/models/productList');
-
-    var viewData = res.getViewData();
+server.prepend('Show', function (req, res, next) {
     var list = productListHelper.getList(req.currentCustomer.raw, { type: 10 });
-
     productListHelper.removeExpiredItems(list)
     next();
 });
