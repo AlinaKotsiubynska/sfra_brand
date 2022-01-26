@@ -16,21 +16,6 @@ server.prepend('Show', consentTracking.consent, server.middleware.https, csrfPro
     var list = productListHelper.getList(req.currentCustomer.raw, { type: 10 });
 
     productListHelper.removeExpiredItems(list)
-
-    // var updatedList = productListHelper.getList(req.currentCustomer.raw, { type: 10 });
-
-    var WishlistModel = new WishlistModel(
-        list,
-        {
-            type: 'wishlist',
-            publicView: false,
-            pageSize: PAGE_SIZE_ITEMS,
-            pageNumber: 1
-        }
-    ).productList;
-
-    viewData.wishlist = WishlistModel;
-    res.setViewData(viewData)
     next();
 });
 

@@ -22,7 +22,6 @@ function removeExpiredItems(list) {
     })
 }
 
-
 module.exports = {
     calculateTimeToExpiration: calculateTimeToExpiration,
     removeExpiredItems: removeExpiredItems,
