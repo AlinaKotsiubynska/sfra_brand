@@ -3,8 +3,8 @@
 var base = require('plugin_wishlists/wishlist/wishlist');
 
 /**
+ * Updates wishlist items counter after successful item removal
  * @param {Object} response - Response received as a result of successful removal of the item
- * update wishlist item counter after successful item removal
  */
 function updateListCount (response) {
     var itemsCount = $('.js-wishlist-items-count');
@@ -12,15 +12,15 @@ function updateListCount (response) {
     if (response.listLength > 0) {
         itemsCount.append(`
         <span class="wishlist-items-amount">${response.listLength} </span>
-        <span class="wishlist-items-type">${response.listLength > 1 ? 'Product(s)' : 'Product'}</span>
+        <span class="wishlist-items-type">${response.wishlistCountMsg}</span>
         `)
     }
 }
 
 /**
+ * Displays error message if remove item from wishlist failed
  * @param {Object} $elementAppendTo - The element to append error html to
  * @param {string} msg - The error message
- * display error message if remove item from wishlist failed
  */
  function displayErrorMessage($elementAppendTo, msg) {
     if ($('.remove-from-wishlist-messages').length === 0) {
@@ -37,7 +37,7 @@ function updateListCount (response) {
 }
 
 /**
- * renders the list up to a given page number
+ * Renders the list up to a given page number
  * @param {number} pageNumber - current page number
  * @param {boolean} spinner - if the spinner has already started
  * @param {string} focusElementSelector - selector of the element to focus on
@@ -74,6 +74,9 @@ function updateListCount (response) {
     $.spinner().stop();
 }
 
+/**
+ * Removes item from customer's wishlist on button click
+ */
 function removeFromWishlist () {
         $('body').on('click', '.remove-from-wishlist', function (e) {
             e.preventDefault();

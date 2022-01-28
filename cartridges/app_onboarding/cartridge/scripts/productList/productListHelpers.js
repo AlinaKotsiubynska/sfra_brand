@@ -23,14 +23,7 @@ function removeExpiredItems(list) {
     })
 }
 
-module.exports = {
-    calculateTimeToExpiration: calculateTimeToExpiration,
-    removeExpiredItems: removeExpiredItems,
-};
+base.calculateTimeToExpiration = calculateTimeToExpiration;
+base.removeExpiredItems = removeExpiredItems;
 
-Object.keys(base).forEach(function (prop) {
-    // eslint-disable-next-line no-prototype-builtins
-    if (!module.exports.hasOwnProperty(prop)) {
-        module.exports[prop] = base[prop];
-    }
-});
+module.exports = base;

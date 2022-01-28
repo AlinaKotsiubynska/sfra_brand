@@ -21,6 +21,7 @@ server.replace('RemoveProduct', function (req, res, next) {
         success: true,
         listIsEmpty: listIsEmpty,
         listLength: listLength,
+        wishlistCountMsg: Resource.msgf('wishlist.items.type', 'wishlist', null, listLength),
         emptyWishlistMsg: listIsEmpty ? Resource.msg('wishlist.empty.text', 'wishlist', null) : ''
     });
     next();

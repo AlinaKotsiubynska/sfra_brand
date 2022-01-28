@@ -40,7 +40,7 @@
                                 </a>
                             </div>
                         </isif>
-                        <p>${Resource.msgf('wishlist.item.timeToExpiration', 'wishlist', null, item.timeToExpiration, item.timeToExpiration > 1 ? 'days' : 'day')}</p>
+                        <p>${Resource.msgf('wishlist.item.timeToExpiration', 'wishlist', null, item.timeToExpiration)}</p>
 
                     </div>
                 </div>

@@ -2,8 +2,8 @@
     <div class="col-sm-8 col-md-6">
         <isif condition="${pdict.wishlist.length > 0}">
             <p class="js-wishlist-items-count">
-                <span class="wishlist-items-amount">${Resource.msgf('wishlist.items.count', 'wishlist', null, pdict.wishlist.length)} </span>
-                <span class="wishlist-items-type"> ${Resource.msgf('wishlist.items.type', 'wishlist', null, pdict.wishlist.length > 1 ? 'Product(s)' : 'Product')}</span>
+                <span class="wishlist-items-amount">${pdict.wishlist.length} </span>
+                <span class="wishlist-items-type"> ${Resource.msgf('wishlist.items.type', 'wishlist', null, pdict.wishlist.length)}</span>
             </p>
         </isif>
         <h2 class="wishlist-owner">${Resource.msgf('wishlist.owner.name', 'wishlist', null, pdict.wishlist.owner.firstName)}</h2>
