@@ -1,0 +1,92 @@
+<div>
+  <style type="text/css">
+    .carousel-item {
+      height: 200px;
+    }
+
+    .slide-image {
+      background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: auto;
+        height: 100%;
+    }
+
+    @media (max-width: 543px) {
+      .slide-image_first {
+        background-image: url(https://zzky-026.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Library-Sites-RefArchSharedLibrary/default/dwf8dcc2a1/images/homepage/homepage-4/small.jpg?$staticlink$);
+      }
+
+      .slide-image_second {
+        background-image: url(https://zzky-026.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Library-Sites-RefArchSharedLibrary/default/dwf8dcc2a1/images/homepage/homepage-5/small.jpg?$staticlink$);
+      }
+
+      .slide-image_third {
+        background-image: url(https://zzky-026.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Library-Sites-RefArchSharedLibrary/default/dwf8dcc2a1/images/homepage/homepage-6/small.jpg?$staticlink$);
+      }
+    }
+
+    @media (max-width: 991px) and (min-width: 544px) {
+      .carousel-item {
+      height: 300px;
+    }
+
+      .slide-image_first {
+        background-image: url(https://zzky-026.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Library-Sites-RefArchSharedLibrary/default/dwf8dcc2a1/images/homepage/homepage-4/medium.jpg?$staticlink$);
+      }
+
+      .slide-image_second {
+        background-image: url(https://zzky-026.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Library-Sites-RefArchSharedLibrary/default/dwf8dcc2a1/images/homepage/homepage-5/medium.jpg?$staticlink$);
+      }
+
+      .slide-image_third {
+        background-image: url(https://zzky-026.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Library-Sites-RefArchSharedLibrary/default/dwf8dcc2a1/images/homepage/homepage-6/medium.jpg?$staticlink$);
+      }
+    }
+
+    @media (min-width: 992px) {
+      .carousel-item {
+      height: 400px;
+    }
+
+      .slide-image_first {
+        background-image: url(https://zzky-026.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Library-Sites-RefArchSharedLibrary/default/dwf8dcc2a1/images/homepage/homepage-4/large.jpg?$staticlink$);
+      }
+
+      .slide-image_second {
+        background-image: url(https://zzky-026.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Library-Sites-RefArchSharedLibrary/default/dwf8dcc2a1/images/homepage/homepage-6/large.jpg?$staticlink$);
+      }
+
+      .slide-image_third {
+        background-image: url(https://zzky-026.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Library-Sites-RefArchSharedLibrary/default/dwf8dcc2a1/images/homepage/homepage-5/large.jpg?$staticlink$);
+      }
+    }
+  </style>
+
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="slide-image slide-image_first"></div>
+      </div>
+      <div class="carousel-item">
+        <div class="slide-image slide-image_second"></div>
+      </div>
+      <div class="carousel-item">
+        <div class="slide-image slide-image_third"></div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
