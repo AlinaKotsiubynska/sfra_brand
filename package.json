@@ -8,7 +8,8 @@
     "upload": "sgmf-scripts --upload -- ",
     "uploadCartridge": "sgmf-scripts --uploadCartridge app_onboarding",
     "compile:js": "sgmf-scripts --compile js",
-    "compile:scss": "sgmf-scripts --compile css"
+    "compile:scss": "sgmf-scripts --compile css",
+    "build": "npm run compile:js && npm run compile:scss"
   },
   "devDependencies": {
     "eslint": "^3.2.2",
@@ -35,6 +36,7 @@
   "paths": {
     "base": "../storefront-reference-architecture/cartridges/app_storefront_base/",
     "plugin_wishlists": "../plugin_wishlists/cartridges/plugin_wishlists/",
-    "plugin_giftregistry": "../plugin_giftregistry/cartridges/plugin_giftregistry/"
+    "plugin_giftregistry": "../plugin_giftregistry/cartridges/plugin_giftregistry/",
+    "plugin_notifyme": "../plugin_notifyme/cartridges/plugin_notifyme/"
   }
 }
