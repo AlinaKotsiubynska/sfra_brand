@@ -28,6 +28,7 @@ server.replace('Refinebar', cache.applyDefaultCache, function (req, res, next) {
     var ProductSearchModel = require('dw/catalog/ProductSearchModel');
     var ProductSearch = require('*/cartridge/models/search/productSearch');
     var searchHelper = require('*/cartridge/scripts/helpers/searchHelpers');
+    var deviceHelper = require('*/cartridge/scripts/helpers/deviceHelpers');
 
     var apiProductSearch = new ProductSearchModel();
     apiProductSearch = searchHelper.setupSearch(apiProductSearch, req.querystring, req.httpParameterMap);
@@ -39,10 +40,8 @@ server.replace('Refinebar', cache.applyDefaultCache, function (req, res, next) {
         CatalogMgr.getSortingOptions(),
         CatalogMgr.getSiteCatalog().getRoot()
     );
-    
-    var regex = /mobile/gmi;
-    var userDevice = req.httpHeaders['user-agent'];
-    var isMobileDevice = regex.test(userDevice)
+
+    var isMobileDevice = deviceHelper.identifyMobileDevice ()
 
     res.render('/search/searchRefineBar', {
         productSearch: productSearch,
