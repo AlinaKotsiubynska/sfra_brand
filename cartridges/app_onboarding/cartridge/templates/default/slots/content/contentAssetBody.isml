@@ -1,0 +1,14 @@
+<isif condition="${slotcontent != null}">
+    <isloop items="${slotcontent.content}" var="contentAsset">
+        <isset name="carouselJSON" value="${JSON.parse(slotcontent.custom.get('carouselConfig'))}" scope="page" />
+        <isif condition="${carouselJSON !== null}">
+            <div id="carouselExampleIndicators" class="carousel slide" data-interval=${carouselJSON.interval}
+                data-keyboard=${carouselJSON.keyboard} data-pause=${carouselJSON.pause} data-ride=${carouselJSON.ride}
+                data-wrap=${carouselJSON.wrap}>
+                <isprint value="${contentAsset.custom.body}" encoding="off" />
+            </div>
+        <iselse/>
+            <isprint value="${contentAsset.custom.body}" encoding="off" />
+        </isif>
+    </isloop>
+</isif>
